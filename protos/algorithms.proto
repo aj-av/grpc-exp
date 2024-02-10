@@ -1,0 +1,34 @@
+syntax="proto3";
+
+package algo;
+
+service AlgoService {
+    rpc AddNums(AddNumsRequest) returns (AddNumsResponse);
+    rpc ReverseString(ReverseStringRequest) returns (ReverseStringResponse);
+    rpc FindMax(FindMaxRequest) returns (FindMaxResponse);
+}
+
+message AddNumsRequest {
+    int32 num1 = 1;
+    int32 num2 = 2;
+}
+
+message AddNumsResponse {
+    int32 sum = 1;
+}
+
+message ReverseStringRequest {
+    string str = 1;
+}
+
+message ReverseStringResponse {
+    string reversed_str = 1;
+}
+
+message FindMaxRequest {
+    repeated int32 nums = 1;
+}
+
+message FindMaxResponse {
+    int32 max = 1;
+}
