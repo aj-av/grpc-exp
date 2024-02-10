@@ -7,8 +7,10 @@ from exchange_pb2 import HelloResponse
 
 class HandshakeService(HandshakeServicer):
     def Hello(self, request, context):
-        print("Request from client: ", request)
-        return HelloResponse(response="Recieved Hello! Hi")
+        print("Received->\n ", request)
+        resp = HelloResponse(response="Hey! How can I help you?")
+        print(f"Sent->\n {resp}")
+        return resp
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=2))
